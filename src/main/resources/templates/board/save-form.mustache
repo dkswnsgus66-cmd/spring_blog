@@ -1,0 +1,27 @@
+{{> layout/header}}
+<div class="container p-5 flex-grow-1">
+    <div class="card">
+        <div class="card-header"><b>글쓰기 화면 입니다.</b></div>
+        <div class="card-body">
+<!--           익명 게시글 작성 -->
+            <form action="/board/save" method="post">
+                <div class="mb-3">
+<!--                    테이블에 데이터 넘길때 name 속성으로 정해줘야 데이터를 넘길수 있다-->
+                    <input type="text" name="username" class="form-control" placeholder="enter username">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="title" class="form-control" placeholder="enter title">
+                </div>
+                <div class="mb-3">
+<!--                    여러줄 받을수있는 input  -->
+                    <textarea type="text" name="content" rows="5" class="form-control" placeholder="enter username">
+                    </textarea>
+                </div>
+                <button class="btn btn-primary">글쓰기 완료</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{{> layout/footer}}
