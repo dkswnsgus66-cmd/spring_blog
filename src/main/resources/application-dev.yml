@@ -1,0 +1,32 @@
+server:
+  servlet:
+    encoding:
+      charser: utf-8
+      force: true
+  port: 8080
+
+logging:
+  level:
+    root: INFO # 모든 라이브러리는 INFO 이상만 출력
+    com.tenco: DEBUG # 내 프로젝트는 디버그 이상 모두 출력
+
+spring:
+  #데이터베이스 연결 설정 (MySQL)
+  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/myblog?serverTimezone=Asia/Seoul
+#    username: root
+#    password: root
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+
+#      초기 데이터 설정 h2 내장 메모리 즉 서버가 꺼지면 안의 데이터가 날아간다
+#  sql:
+#    init:
+#      data-locations:
+#        - classpath:db/data.sql
