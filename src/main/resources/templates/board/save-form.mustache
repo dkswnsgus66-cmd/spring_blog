@@ -4,7 +4,10 @@
         <div class="card-header"><b>글쓰기 화면 입니다.</b></div>
         <div class="card-body">
 <!--           익명 게시글 작성 -->
+<!--    form /board/save 주소랑 연결된 함수가 Post 요청 함수이다 그래서 버튼을 누르면 동작         -->
+<!--            form 은 html 글로 봐야한다 근데 post 와 get만 쓸수있다  -->
             <form action="/board/save" method="post">
+<!--                이 밑의 내용은 html body 로 보면 된다 -->
                 <div class="mb-3">
 <!--                    테이블에 데이터 넘길때 name 속성으로 정해줘야 데이터를 넘길수 있다-->
                     <input type="text" name="username" class="form-control" placeholder="enter username">
@@ -17,11 +20,11 @@
                     <textarea type="text" name="content" rows="5" class="form-control" placeholder="enter username">
                     </textarea>
                 </div>
+<!--                버튼을 누르면 form 이 동작한다 -->
                 <button class="btn btn-primary">글쓰기 완료</button>
             </form>
         </div>
     </div>
-
 </div>
 
 {{> layout/footer}}

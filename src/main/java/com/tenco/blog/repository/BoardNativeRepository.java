@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 // 이 어노테이션만 선언하면
+
 @Repository // Ioc + DI
 // 생성자 만듬
 @RequiredArgsConstructor

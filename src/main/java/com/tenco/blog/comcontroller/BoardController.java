@@ -20,7 +20,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BoardController {
     // DI 처리 해야함 외부에서 가지고 와야함
-
     private final BoardNativeRepository boardNativeRepository;
 
 
@@ -43,6 +42,7 @@ public class BoardController {
     // 데이터 post하고 다시 그걸 던진다
     // 주소가 같아도 get post 방식 구분 되어서 적용가능
     // 데이터 들어오게 하기
+    // 주소가 던져지면 해당 주소를 할당받은 함수 호출
     @PostMapping("/board/save")
     public String saveProc(
             @RequestParam("username") String username,
