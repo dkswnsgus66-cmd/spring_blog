@@ -1,16 +1,17 @@
 {{> layout/header}}
 <div class="container p-5 flex-grow-1">
 <!-- -->
-    {{#boarderList}}
+    {{#boardList}}
         <div class="card mb-3">
             <div class="card-body">
+<!--               model 에서 리스트에 담긴 Boarder 를 가져왔기때문에 해당 클래스의 title Boarder란걸 알기에 따로 지정해줄 필요없다  -->
                 <h4 class="card-title mb-3">{{title}}</h4>
 <!--                머스테치 문법은 getter 메서드를 가지고 오고 get 은 탈락가능 -->
                 <div>{{time}}</div>
-                <a href="/board/1" class="btn btn-primary">상세보기</a>
+                <a href="/board/{{id}}" class="btn btn-primary">상세보기</a>
             </div>
         </div>
-    {{/boarderList}}
+    {{/boardList}}
 
 
 

@@ -9,14 +9,15 @@
         {{! board.id}}: 현재 게시글의 ID를 URL에 포함
         RESTful URL 패턴: /board/{id}/update-form
         -->
-        <a href="/board/{{board.id}}/update-form" class="btn btn-warning me-1">수정</a>
+<!--        추가로 a 태그는 전부 get 요청이다-->
+        <a href="/board/{{id}}/update-form" class="btn btn-warning me-1">수정</a>
 
         <!--
         삭제 버튼: POST 방식으로 삭제 요청
         form을 사용하는 이유: DELETE 동작은 GET이 아닌 POST/DELETE 방식 사용
         RESTful URL 패턴: /board/{id}/delete
         -->
-        <form action="/board/{{board.id}}/delete" method="post">
+        <form action="/board/{{id}}/delete" method="post">
             <button class="btn btn-danger">삭제</button>
         </form>
     </div>
