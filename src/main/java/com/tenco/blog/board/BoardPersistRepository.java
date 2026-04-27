@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository // IoC
 @RequiredArgsConstructor // DI 처리됨
@@ -38,6 +40,24 @@ public class BoardPersistRepository {
         // -- 4. board 객체의 id 변수 값을 1차 캐시에 보관 map(구조로보관)
         // 1차 캐시에 들어간 이제 영속 상태로 변경된 오브젝트를 전달 (리턴한다)
         return board;
+    }
+
+    // JPQL을 사용한 게시글 목록 조회
+    public List<Board> findAll() {
+
+        // JPQL : 엔티티 객체를 대상으로 하는 객체지향 쿼리
+        // Board는 엔티티 클래스 명 , b는 별칭
+        // JPQL 쿼리
+
+        // Board 테이블 명이 아닌 자바 클래스명 사용  찾는것도 createdAt 자바 멤버변수로 찾음
+        String jpql = """
+                SELECT b FROM Board b ORDER BY b.createdAt DESC
+                """;
+        // jpql 이라 이 쿼리 메서드 쓴다
+        List<Board> boardList = em.createQuery(jpql, Board.class).getResultList();
+
+        return boardList;
+
     }
 
 
